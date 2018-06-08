@@ -14,7 +14,6 @@ const devTools =
 
 const store = createStore(
   rootReducer,
-  initialState,
   compose(
     applyMiddleware(thunk),
     devTools
