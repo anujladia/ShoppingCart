@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import CartProduct from "./CartProduct";
 import { connect } from "react-redux";
 import {
+  createCart,
   getUserCart,
   addProductToCart,
   removeProductFromCart
@@ -18,13 +19,12 @@ class Cart extends Component {
     this.onRemoveFromCart = this.onRemoveFromCart.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (localStorage.cart_id) {
       this.props.getUserCart(localStorage.cart_id);
     } else {
       this.props.createCart();
     }
-    this.setState({ cart: this.props.cart });
   }
 
   onAddToCart(product_id) {
@@ -115,6 +115,7 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
+  createCart: PropTypes.func.isRequired,
   getUserCart: PropTypes.func.isRequired,
   addProductToCart: PropTypes.func.isRequired,
   removeProductFromCart: PropTypes.func.isRequired,
@@ -127,5 +128,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getUserCart, addProductToCart, removeProductFromCart }
+  { createCart, getUserCart, addProductToCart, removeProductFromCart }
 )(Cart);
