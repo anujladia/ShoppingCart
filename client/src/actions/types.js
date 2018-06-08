@@ -1,0 +1,9 @@
+export const GET_PRODUCTS = "GET_PRODUCTS";
+export const PRODUCTS_LOADING = "PRODUCTS_LOADING";
+export const CREATE_CART = "CREATE_CART";
+export const GET_CART = "GET_CART";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const GET_ERRORS = "GET_ERRORS";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const UPLOAD_CSV = "UPLOAD_CSV";
+export const CSV_UPLOADING = "CSV_UPLOADING";
